@@ -9,19 +9,11 @@ const DiplomaShowcase = () => {
   const diplomas = [
     {
       id: 1,
-      title: "Frontend Development Diplom",
-      institution: "DIV Academy",
-      year: "2024",
-      image: "/frontend.jpeg", // Öz diplom şəklinizin yolunu daxil edin
-      description: "HTML, CSS, Bootstrap, JavaScript, Typescript, Vue.js, React.js, Tailwind və müasir frontend texnologiyaları üzrə tam kurs"
-    },
-    {
-      id: 2,
-      title: "Full-Stack Web Development Diplom",
-      institution: "DIV Academy",
-      year: "2025",
-      image: "/full-stack.jpeg", // Öz diplom şəklinizin yolunu daxil edin
-      description: "node.js, Express.js, MongoDB, Nest.js, TypeOrm, RESTful API-lər və müasir backend texnologiyaları üzrə tam kurs"
+      title: "Work Sertificate",
+      institution: "Okmedia",
+      year: "2025-2026",
+      image: "/work.jpeg", // Öz diplom şəklinizin yolunu daxil edin
+      description: "HTML, CSS, JavaScript, Tailwind və s. frontend texnologiyaları ilə bağlı praktiki təcrübə və biliklərimi nümayiş etdirən iş sertifikatı."
     }
   ];
 
@@ -48,7 +40,7 @@ const DiplomaShowcase = () => {
               <h1 className="text-2xl font-bold text-gray-800">Əkrəm Abıyev</h1>
             </div>
             <div className="text-sm text-gray-600">
-              Frontend Developer • Sertifikatlar
+              Frontend Developer
             </div>
           </div>
         </div>
@@ -58,10 +50,10 @@ const DiplomaShowcase = () => {
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Mənim <span className="text-blue-600">Diplomlarım</span>
+            İş <span className="text-blue-600">Sertifikatım</span>
           </h2>
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-            Frontend development sahəsindəki təhsilim və əldə etdiyim sertifikatlar
+            Okmedia kompaniyasında iş göstərdiyim zaman aldığım sertifikat
           </p>
         </div>
       </section>
