@@ -1,9 +1,9 @@
-import DiplomaShowcase from './components/DiplomaShowcase'
+import CertificationShowcase from './components/CertificationShowcase'
 
 function App() {
   return (
     <div className='App'>
-      <DiplomaShowcase />
+      <CertificationShowcase />
     </div>
   )
 }

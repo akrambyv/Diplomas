@@ -1,32 +1,33 @@
-import React, { useState } from 'react';
-import { X, Award, Download, Eye } from 'lucide-react';
+import { useState } from 'react';
+import { X, Award, Eye } from 'lucide-react';
 
-const DiplomaShowcase = () => {
-  const [selectedDiploma, setSelectedDiploma] = useState(null);
+const CertificationShowcase = () => {
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
   const [imageError, setImageError] = useState({});
 
-  // Diplom məlumatları - bu hissəni öz diplomlarınızla əvəzləyin
-  const diplomas = [
+  // Sertifikat məlumatları - bu hissəni öz sertifikatlarınızla əvəzləyin
+  const certificates = [
     {
       id: 1,
-      title: "Work Sertificate",
-      institution: "Okmedia",
-      year: "2025-2026",
-      image: "/work.jpeg", // Öz diplom şəklinizin yolunu daxil edin
-      description: "HTML, CSS, JavaScript, Tailwind və s. frontend texnologiyaları ilə bağlı praktiki təcrübə və biliklərimi nümayiş etdirən iş sertifikatı."
-    }
+      title: 'İş Sertifikatı',
+      institution: 'Okmedia',
+      year: '2025-2026',
+      image: '/work.jpeg', // Sertifikat şəklinizin yolunu daxil edin
+      description:
+        'HTML, CSS, JavaScript, Tailwind və s. frontend texnologiyaları ilə bağlı praktiki təcrübə və biliklərimi nümayiş etdirən iş sertifikatı.',
+    },
   ];
 
-  const handleImageError = (diplomaId) => {
-    setImageError(prev => ({ ...prev, [diplomaId]: true }));
+  const handleImageError = (certificateId) => {
+    setImageError((prev) => ({ ...prev, [certificateId]: true }));
   };
 
-  const openModal = (diploma) => {
-    setSelectedDiploma(diploma);
+  const openModal = (certificate) => {
+    setSelectedCertificate(certificate);
   };
 
   const closeModal = () => {
-    setSelectedDiploma(null);
+    setSelectedCertificate(null);
   };
 
   return (
@@ -39,9 +40,7 @@ const DiplomaShowcase = () => {
               <Award className="w-8 h-8 text-blue-600" />
               <h1 className="text-2xl font-bold text-gray-800">Əkrəm Abıyev</h1>
             </div>
-            <div className="text-sm text-gray-600">
-              Frontend Developer
-            </div>
+            <div className="text-sm text-gray-600">Frontend Developer</div>
           </div>
         </div>
       </header>
@@ -58,36 +57,36 @@ const DiplomaShowcase = () => {
         </div>
       </section>
 
-      {/* Diploma Grid */}
+      {/* Certificates Grid */}
       <section className="py-12 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
-            {diplomas.map((diploma) => (
-              <div key={diploma.id} className="group">
+            {certificates.map((certificate) => (
+              <div key={certificate.id} className="group">
                 <div className="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:scale-105">
-                  {/* Diploma Image */}
+                  {/* Certificate Image */}
                   <div className="relative bg-gray-100 overflow-hidden">
-                    {!imageError[diploma.id] ? (
+                    {!imageError[certificate.id] ? (
                       <img
-                        src={diploma.image}
-                        alt={diploma.title}
+                        src={certificate.image}
+                        alt={certificate.title}
                         className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                        onError={() => handleImageError(diploma.id)}
+                        onError={() => handleImageError(certificate.id)}
                       />
                     ) : (
                       <div className="w-full h-80 flex items-center justify-center bg-gradient-to-br from-blue-100 to-indigo-200">
                         <div className="text-center">
                           <Award className="w-16 h-16 text-blue-500 mx-auto mb-4" />
-                          <p className="text-blue-600 font-semibold">Diplom şəkli</p>
+                          <p className="text-blue-600 font-semibold">Sertifikat şəkli</p>
                           <p className="text-sm text-gray-500 mt-2">Şəkli əlavə edin</p>
                         </div>
                       </div>
                     )}
-                    
+
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <button
-                        onClick={() => openModal(diploma)}
+                        onClick={() => openModal(certificate)}
                         className="bg-white text-gray-800 px-6 py-3 rounded-full font-semibold flex items-center space-x-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
                       >
                         <Eye className="w-4 h-4" />
@@ -99,17 +98,11 @@ const DiplomaShowcase = () => {
                   {/* Content */}
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-gray-800 mb-2">
-                      {diploma.title}
+                      {certificate.title}
                     </h3>
-                    <p className="text-blue-600 font-semibold mb-2">
-                      {diploma.institution}
-                    </p>
-                    <p className="text-gray-500 text-sm mb-4">
-                      {diploma.year}
-                    </p>
-                    <p className="text-gray-600 leading-relaxed">
-                      {diploma.description}
-                    </p>
+                    <p className="text-blue-600 font-semibold mb-2">{certificate.institution}</p>
+                    <p className="text-gray-500 text-sm mb-4">{certificate.year}</p>
+                    <p className="text-gray-600 leading-relaxed">{certificate.description}</p>
                   </div>
                 </div>
               </div>
@@ -126,10 +119,18 @@ const DiplomaShowcase = () => {
             <a href="tel:050-496-56-85" className="hover:text-blue-400 transition-colors">
               📞 050-496-56-85
             </a>
-            <a href="mailto:abyvkrm2004@gmail.com" className="hover:text-blue-400 transition-colors">
+            <a
+              href="mailto:abyvkrm2004@gmail.com"
+              className="hover:text-blue-400 transition-colors"
+            >
               ✉️ abyvkrm2004@gmail.com
             </a>
-            <a href="https://www.linkedin.com/in/akramabiyev0/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
+            <a
+              href="https://www.linkedin.com/in/akramabiyev0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition-colors"
+            >
               🔗 LinkedIn
             </a>
           </div>
@@ -137,13 +138,13 @@ const DiplomaShowcase = () => {
       </footer>
 
       {/* Modal */}
-      {selectedDiploma && (
+      {selectedCertificate && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
             {/* Modal Header */}
             <div className="flex items-center justify-between p-6 border-b">
               <h3 className="text-2xl font-bold text-gray-800">
-                {selectedDiploma.title}
+                {selectedCertificate.title}
               </h3>
               <button
                 onClick={closeModal}
@@ -156,35 +157,35 @@ const DiplomaShowcase = () => {
             {/* Modal Content */}
             <div className="p-6">
               <div className="mb-6 max-h-[60vh] overflow-auto">
-                {!imageError[selectedDiploma.id] ? (
+                {!imageError[selectedCertificate.id] ? (
                   <img
-                    src={selectedDiploma.image}
-                    alt={selectedDiploma.title}
+                    src={selectedCertificate.image}
+                    alt={selectedCertificate.title}
                     className="w-full h-auto object-contain rounded-lg shadow-lg"
                   />
                 ) : (
                   <div className="w-full h-64 bg-gradient-to-br from-blue-100 to-indigo-200 rounded-lg flex items-center justify-center">
                     <div className="text-center">
                       <Award className="w-20 h-20 text-blue-500 mx-auto mb-4" />
-                      <p className="text-blue-600 font-semibold text-lg">Diplom şəkli</p>
+                      <p className="text-blue-600 font-semibold text-lg">Sertifikat şəkli</p>
                       <p className="text-gray-500 mt-2">Şəkli əlavə edin</p>
                     </div>
                   </div>
                 )}
               </div>
-              
+
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold text-gray-800">Təşkilat:</h4>
-                  <p className="text-blue-600">{selectedDiploma.institution}</p>
+                  <p className="text-blue-600">{selectedCertificate.institution}</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800">Tarix:</h4>
-                  <p className="text-gray-600">{selectedDiploma.year}</p>
+                  <p className="text-gray-600">{selectedCertificate.year}</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800">Təsvir:</h4>
-                  <p className="text-gray-600">{selectedDiploma.description}</p>
+                  <p className="text-gray-600">{selectedCertificate.description}</p>
                 </div>
               </div>
             </div>
@@ -195,4 +196,4 @@ const DiplomaShowcase = () => {
   );
 };
 
-export default DiplomaShowcase;
+export default CertificationShowcase;
