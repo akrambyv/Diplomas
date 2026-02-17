@@ -12,9 +12,27 @@ const CertificationShowcase = () => {
       title: 'İş Sertifikatı',
       institution: 'Okmedia',
       year: '2025-2026',
-      image: '/work.jpeg', // Sertifikat şəklinizin yolunu daxil edin
+      image: '/work.jpeg', // İş sertifikatının şəkli
       description:
         'HTML, CSS, JavaScript, Tailwind və s. frontend texnologiyaları ilə bağlı praktiki təcrübə və biliklərimi nümayiş etdirən iş sertifikatı.',
+    },
+    {
+      id: 2,
+      title: 'Frontend Developer Sertifikatı',
+      institution: 'Div Academy',
+      year: '2024-2025',
+      image: '/frontend.jpeg', // Frontend sertifikatı şəkli
+      description:
+        'Div Academy-də keçdiyim intensiv Frontend kursu çərçivəsində HTML, CSS, JavaScript və müasir frontend alətləri üzrə qazandığım bilikləri təsdiq edən sertifikat.',
+    },
+    {
+      id: 3,
+      title: 'Full Stack Developer Sertifikatı',
+      institution: 'Div Academy',
+      year: '2024-2025',
+      image: '/full-stack.jpeg', // Full Stack sertifikatı şəkli
+      description:
+        'Div Academy Full Stack proqramı çərçivəsində həm frontend, həm də backend texnologiyaları üzrə qazandığım bilik və bacarıqları göstərən sertifikat.',
     },
   ];
 
@@ -49,10 +67,10 @@ const CertificationShowcase = () => {
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            İş <span className="text-blue-600">Sertifikatım</span>
+            İş və Kurs <span className="text-blue-600">Sertifikatlarım</span>
           </h2>
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-            Okmedia kompaniyasında iş göstərdiyim zaman aldığım sertifikat
+            Okmedia kompaniyasında iş göstərdiyim zaman aldığım sertifikat və Div Academy-də keçdiyim kursların sertifikatları
           </p>
         </div>
       </section>
